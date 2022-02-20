@@ -18,7 +18,8 @@ class Student:
             return 'Ошибка'
 
     def __str__(self):
-        res = f'Имя: {name} + \n Фамилия: {surname} + \n Средняя оценка за домашние задания: {sum(self.grades.values())/len(self.grades)} +\n курсы..+\n'
+        delimiter = ','
+        res = f'Имя: {name} + \n Фамилия: {surname} + \n Средняя оценка за домашние задания: {sum(self.grades.values()) / len(self.grades)} +\n Курсы в процессе изучения: {delimiter.join(self.courses_in_progress)} +\n Завершенные курсы: {self.finished_courses}'
         return res
 
     def __lt__(self, student):
@@ -80,3 +81,5 @@ cool_reviewer.rate_hw(best_student, 'Python', 10)
 cool_reviewer.rate_hw(best_student, 'Python', 10)
 
 print(best_student.grades)
+
+
